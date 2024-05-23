@@ -1,66 +1,63 @@
-### Modèle de Perceptron à 3 couches
+# 3-Layer Perceptron Model
+Description
+This model implements a 3-layer perceptron with an input layer, a hidden layer, and an output layer. It uses ReLU activation functions for the hidden layer and softmax for the output layer. The model is trained using stochastic gradient descent.
 
-#### Description
-Ce modèle implémente un perceptron à 3 couches avec une couche d'entrée, une couche cachée et une couche de sortie. Il utilise des fonctions d'activation ReLU pour la couche cachée et softmax pour la couche de sortie. Le modèle est entraîné à l'aide d'une descente de gradient stochastique.
+The main.py file contains the model class, and the note_book file allows for testing the functions separately.
 
+# Features
+Random initialization of weights and biases
+ReLU and softmax activation functions
+Calculation of model accuracy
+Training the model with training data
+Saving and loading the model from a file
+Usage
+Installation
+Make sure you have Python installed on your system.
 
-Le fichier `main.py` contient la classe model et le fichier `note_book` permet le teste des fonctions separements
+# Training the model
 
-#### Fonctionnalités
-- Initialisation aléatoire des poids et des biais
-- Fonctions d'activation ReLU et softmax
-- Calcul de la précision du modèle
-- Entraînement du modèle avec des données d'entraînement
-- Sauvegarde et chargement du modèle à partir d'un fichier
-
-#### Utilisation
-**Installation**
-Assurez-vous d'avoir Python installé sur votre système.
-
-**Entraînement du modèle**
-1. Créez une instance du modèle en spécifiant les tailles des couches d'entrée, cachée et de sortie.
-2. Appelez la méthode `fit` avec les données d'entraînement, le nombre d'itérations, le taux d'apprentissage et d'autres paramètres facultatifs.
-3. Le dataset qui de base est fait 42000 lignes a ete tronquer pour le l'occation et il fait donc 1000 lignes pour le test et 200 pour le training
-Exemple :
-```python
+Create an instance of the model by specifying the sizes of the input, hidden, and output layers.
+Call the fit method with the training data, the number of iterations, the learning rate, and other optional parameters.
+The dataset, which is originally 42,000 lines, has been truncated for this occasion and is now 1,000 lines for testing and 200 for training.
+Example:
+python
+Copy
 from three_layer_perceptron import Model
 
-# Création du modèle
+# Create the model
 model = Model(input_size=784, hidden_size=100, output_size=10)
 
-# Chargement des données d'entraînement
+# Load the training data
 x_train = ...
 y_train = ...
 
-# Entraînement du modèle
+# Train the model
 model.fit(x_train, y_train, eval=10, iters=100, a=0.1, show_training_info=True)
-```
+Using the trained model
 
-**Utilisation du modèle entraîné**
+Don't forget to update the file paths according to your needs
 
+Use the predict method to get the model's predictions for new data.
 
-**N'oublier pas de Mettre a Jour les chemins d'acces selon vos besoins**
+Example:
 
-Utilisez la méthode `predict` pour obtenir les prédictions du modèle pour de nouvelles données.
-
-Exemple :
-```python
-# Prédictions pour de nouvelles données
+python
+Copy
+# Predictions for new data
 x_new = ...
 predictions = model.predict(x_new)
-```
+Saving and loading the model
+Use the save and load methods to save and load the model from a file.
 
-**Sauvegarde et chargement du modèle**
-Utilisez les méthodes `save` et `load` pour sauvegarder et charger le modèle depuis un fichier.
+# Example:
 
-Exemple :
-```python
-# Sauvegarde du modèle
+python
+Copy
+# Save the model
 model.save('model.pkl')
 
-# Chargement du modèle sauvegardé
+# Load the saved model
 loaded_model = Model.load('model.pkl')
-```
-Un fichier `model.pkl` est fournie dans le repertoire pour eviter de perdre du temps en entrainement,  vous pouvez juste charger ce model et faire des predictions
+A model.pkl file is provided in the directory to save you time on training, you can just load this model and make predictions.
 
-Adapter les chemins d'accès et les exemples de code en fonction de votre environnement et de vos données.
+Adapt the file paths and code examples based on your environment and data.
