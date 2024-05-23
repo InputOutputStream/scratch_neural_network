@@ -40,9 +40,6 @@ Don't forget to update the file paths according to your needs
 Use the predict method to get the model's predictions for new data.
 
 Example:
-
-python
-Copy
 # Predictions for new data
 x_new = ...
 predictions = model.predict(x_new)
@@ -51,8 +48,6 @@ Use the save and load methods to save and load the model from a file.
 
 # Example:
 
-python
-Copy
 # Save the model
 model.save('model.pkl')
 
